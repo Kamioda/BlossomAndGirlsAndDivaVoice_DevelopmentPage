@@ -52,19 +52,101 @@
             <main>
                 <div class="container">
                     <section>
-                        <h3>登場キャラクター</h3>
+                        <h2>登場キャラクター</h2>
                         <div id="characters"></div>
                     </section>
                     <section>
-                        <h3>用語集</h3>
+                        <h2>用語集</h2>
                         <div id="terms"></div>
                     </section>
                     <section>
-                        <h3>ファイル投稿</h3>
-                        <div>
-                            <input type="file" id="multipleUpload" accept="audio/*" multiple />
-                            <input type="button" id="multipleUploadButton" value="送信" />
+                        <section>
+                            <h2>歌唱テスト</h2>
+                            <p>歌姫に指定されているキャラクターに応募する場合は、歌唱テストがあります。</p>
+                        </section>
+                        <div class="accordion">
+                            <div class="option">
+                                <input type="checkbox" class="toggle" id="songs" />
+                                <label class="title" for="songs">課題曲</label>
+                                <div class="content">
+                                    <section>
+                                        <h5>１曲目</h5>
+                                        <p>「花」（作曲：滝廉太郎）を歌ったものを投稿して下さい。</p>
+                                    </section>
+                                    <section>
+                                        <h5>２・３曲目</h5>
+                                        <p>次の合唱曲の中から２曲選択し、キャラクターの歌唱パートに当てはまるパートを歌ったものを投稿して下さい。</p>
+                                        <p>担当パート以外を歌う必要はありません。</p>
+                                        <p>伴奏も一緒に収録して下さい。</p>
+                                        <ul>
+                                            <li>COSMOS</li>
+                                            <li>信じる</li>
+                                            <li>流浪の民</li>
+                                            <li>大地讃頌</li>
+                                            <li>明日へ</li>
+                                            <li>時の旅人</li>
+                                            <li>予感</li>
+                                            <li>走る川</li>
+                                            <li>ひとつの朝</li>
+                                            <li>聞こえる</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" class="toggle" id="evaluation" />
+                                <label class="title" for="evaluation">評価方法</label>
+                                <div class="content">
+                                    <section>
+                                        <p>全ての楽曲を次の項目について10点満点で評価し、その合計点で評価します。</p>
+                                        <ul>
+                                            <li>音域とピッチの正確さ</li>
+                                            <li>リズムの正確さ</li>
+                                            <li>発声方法</li>
+                                            <li>声量のコントロール</li>
+                                        </ul>
+                                        <p>得点比率は下記の通りです。</p>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>楽曲</td>
+                                                    <td>割合</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>花</td>
+                                                    <td>
+                                                        <span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+                                                            <span style="padding: 0 10px; border-bottom: 1px solid #000000;">6</span>
+                                                            <span style="padding: 0 10px;">10</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>選択曲</td>
+                                                    <td>
+                                                        <span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+                                                            <span style="padding: 0 10px; border-bottom: 1px solid #000000;">4</span>
+                                                            <span style="padding: 0 10px;">10</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>※同点の場合は、「歌詞の世界観と表現力」と「歌い方の個性」で判断します。</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
+                        <section>
+                            <h4>投稿フォーム</h4>
+                            <p>投稿IDが変化してしまいますので、投稿時は一回で全て投稿して下さい。</p>
+                            <div>
+                                <input type="file" id="multipleUpload" accept="audio/*" multiple />
+                                <input type="submit" id="multipleUploadButton" value="送信" />
+                            </div>
+                        </section>
                     </section>
                 </div>
             </main>
