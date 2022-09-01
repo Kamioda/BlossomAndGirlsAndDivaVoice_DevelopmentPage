@@ -8,7 +8,7 @@ const fs = require('fs');
  * @returns {string}
  */
 module.exports = (FileInformation, reservedId) => {
-    if (FileInformation == null) return null;
+    if (FileInformation == null || !fs.existsSync(FileInformation.path)) return null;
     const id = reservedId == null ? uuidv4().split('-').join('').toUpperCase() : reservedId;
     const newDir = './files/' + id + '/';
     if (!fs.existsSync(newDir)) fs.mkdir(newDir, () => {});
