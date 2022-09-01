@@ -1,7 +1,8 @@
 const express = require('express');
+const path = require('path');
 const multer = require('multer');
 const sortFile = require('./sortfile.js');
-const upload = multer({ dest: 'files/' });
+const upload = multer({ dest: path.dirname(__dirname).replace(/\\/g, "/") + '/files/' });
 
 const app = express();
 app.post('/api/upload', upload.array('files'), (req, res) => {
