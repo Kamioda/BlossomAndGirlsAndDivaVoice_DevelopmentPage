@@ -11,7 +11,7 @@ module.exports = (FileInformation, reservedId) => {
     if (FileInformation == null || !fs.existsSync(FileInformation.path)) return null;
     const id = reservedId == null ? uuidv4().split('-').join('').toUpperCase() : reservedId;
     const newDir = './files/' + id + '/';
-    if (!fs.existsSync(newDir)) fs.mkdir(newDir, () => {});
-    fs.rename(FileInformation.path, newDir + FileInformation.originalname, () => {});
+    if (!fs.existsSync(newDir)) fs.mkdirSync(newDir);
+    fs.renameSync(FileInformation.path, newDir + FileInformation.originalname);
     return id;
 };
