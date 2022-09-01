@@ -48,7 +48,7 @@
     line-height: 1.5;
 }
 .toggle:checked + .title + .content {
-    max-height: 500px;
+    max-height: 800px;
     transition: all 1.5s;
 }
 .toggle:checked + .title::before {
@@ -58,4 +58,8 @@
 table {
     border-collapse: separate;
     border-spacing: 5px 3px;
+}
+
+img {
+    width: auto;
 }

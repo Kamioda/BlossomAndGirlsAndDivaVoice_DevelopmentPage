@@ -1,7 +1,7 @@
 const CharacterInfoGenerator = {
     /**
      * キャラクターの主人公との関係に関する事項を作成する
-     * @param {{ name: string, sex: string, birthday: string, relationship_with_main_character: string[], attack: boolean, club: string, committee: string, grade_difference: number, singing: { part: string, level: string }, elementary_school: string, know_main_character_identity: boolean, special_identity: string[], request_voice_image: string }} characterInfo
+     * @param {{ image: string, name: string, sex: string, birthday: string, relationship_with_main_character: string[], attack: boolean, club: string, committee: string, grade_difference: number, singing: { part: string, level: string }, elementary_school: string, know_main_character_identity: boolean, special_identity: string[], request_voice_image: string }} characterInfo
      */
     CreateCharacterInformationAboutRelationshipWithMainCharacter: characterInfo => {
         if (
@@ -43,7 +43,7 @@ const CharacterInfoGenerator = {
 
     /**
      * キャラクターの基本情報を作成する
-     * @param {{ name: string, sex: string, birthday: string, relationship_with_main_character: string[], attack: boolean, club: string, committee: string, grade_difference: number, singing: { part: string, level: string }, elementary_school: string, know_main_character_identity: boolean, special_identity: string[], request_voice_image: string }} characterInfo
+     * @param {{ image: string, name: string, sex: string, birthday: string, relationship_with_main_character: string[], attack: boolean, club: string, committee: string, grade_difference: number, singing: { part: string, level: string }, elementary_school: string, know_main_character_identity: boolean, special_identity: string[], request_voice_image: string }} characterInfo
      */
     CreateCharacterBasicInformation: characterInfo => {
         return m('section', [
@@ -65,11 +65,14 @@ const CharacterInfoGenerator = {
 
     /**
      * キャラクター情報データを作成する
-     * @param {{ name: string, sex: string, birthday: string, relationship_with_main_character: string[], attack: boolean, club: string, committee: string, grade_difference: number, singing: { part: string, level: string }, elementary_school: string, know_main_character_identity: boolean, special_identity: string[], request_voice_image: string }} characterInfo
+     * @param {{ image: string, name: string, sex: string, birthday: string, relationship_with_main_character: string[], attack: boolean, club: string, committee: string, grade_difference: number, singing: { part: string, level: string }, elementary_school: string, know_main_character_identity: boolean, special_identity: string[], request_voice_image: string }} characterInfo
      */
 
     CreateCharacterInformationContent: characterInfo => {
-        const arr = [CharacterInfoGenerator.CreateCharacterBasicInformation(characterInfo)];
+        const arr = [
+            m('img', { src: characterInfo.image == null ? '../images/no_image.png' : characterInfo.image }),
+            CharacterInfoGenerator.CreateCharacterBasicInformation(characterInfo)
+        ];
         const CharacterInformationAboutRelationshipWithMainCharacter =
             CharacterInfoGenerator.CreateCharacterInformationAboutRelationshipWithMainCharacter(characterInfo);
         if (CharacterInformationAboutRelationshipWithMainCharacter !== null)
