@@ -71,7 +71,7 @@ const CharacterInfoGenerator = {
     CreateCharacterInformationContent: characterInfo => {
         const arr = [
             m('img', { src: characterInfo.image == null ? '../images/no_image.png' : characterInfo.image }),
-            CharacterInfoGenerator.CreateCharacterBasicInformation(characterInfo)
+            CharacterInfoGenerator.CreateCharacterBasicInformation(characterInfo),
         ];
         const CharacterInformationAboutRelationshipWithMainCharacter =
             CharacterInfoGenerator.CreateCharacterInformationAboutRelationshipWithMainCharacter(characterInfo);
