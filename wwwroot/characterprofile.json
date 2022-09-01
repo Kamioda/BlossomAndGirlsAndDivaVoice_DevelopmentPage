@@ -1,0 +1,150 @@
+{
+    "characters": [
+        {
+            "name": "一ノ瀬　葵",
+            "sex": "男",
+            "birthday": "プレイヤーが設定",
+            "club": "プレイヤーが設定（文化部のみ選択可）",
+            "committee": "プレイヤーが設定（一部のみ選択可）",
+            "special_attribute": "女装男子",
+            "singing": {
+                "part": "プレイヤーが設定",
+                "level": "プレイヤーが設定"
+            },
+            "request_voice_image": "女子を演じている時は少しだけ高めだが、演じていない時は低めの女声"
+        },
+        {
+            "name": "飯島　みらい",
+            "sex": "女",
+            "birthday": "３月１４日",
+            "relationship_with_main_character": ["幼なじみ", "ルームメイト"],
+            "attack": false,
+            "club": "新聞部",
+            "committee": "放送委員会",
+            "grade_difference": 0,
+            "singing": {
+                "part": "ソプラノ",
+                "level": "歌姫"
+            },
+            "elementary_school": "公立はるかぜ小学校",
+            "know_main_character_identity": true,
+            "special_identity": ["情報屋"],
+            "request_voice_image": "「あまいろパステル　～パステルカラーの恋～」で募集実施につき募集対象外"
+        },
+        {
+            "name": "愛野　みゆき",
+            "sex": "女",
+            "birthday": "２月１４日",
+            "relationship_with_main_character": ["ルームメイト"],
+            "attack": false,
+            "club": "園芸部",
+            "grade_difference": 0,
+            "singing": {
+                "part": "ソプラノ",
+                "level": "歌姫"
+            },
+            "elementary_school": "公立はるかぜ小学校",
+            "know_main_character_identity": true,
+            "special_identity": ["ブロッサム・ディーバ"],
+            "request_voice_image": "「あまいろパステル　～パステルカラーの恋～」で募集実施につき募集対象外"
+        },
+        {
+            "name": "木下　瑞希",
+            "sex": "女",
+            "birthday": "４月１９日",
+            "relationship_with_main_character": ["幼なじみ", "ルームメイト"],
+            "attack": true,
+            "club": "家庭科部",
+            "grade_difference": 0,
+            "singing": {
+                "part": "アルト",
+                "level": "上手い"
+            },
+            "elementary_school": "桜木市立第４小学校",
+            "know_main_character_identity": false,
+            "request_voice_image": "普通の女子中学生のような感じであれば特になし"
+        },
+        {
+            "name": "村上　涼花",
+            "sex": "女",
+            "birthday": "９月１８日",
+            "relationship_with_main_character": ["先輩"],
+            "attack": true,
+            "committee": "生徒会",
+            "grade_difference": 1,
+            "singing": {
+                "part": "ソプラノ",
+                "level": "標準的"
+            },
+            "elementary_school": "私立桜女子学園初等部",
+            "know_main_character_identity": false,
+            "special_identity": ["生徒会長"],
+            "request_voice_image": "高めの声で、どこかマイペースな感じのあるイメージ"
+        },
+        {
+            "name": "西園寺　奏",
+            "sex": "女",
+            "birthday": "１１月２６日",
+            "attack": true,
+            "club": "茶道部",
+            "committee": "図書委員会",
+            "grade_difference": 0,
+            "singing": {
+                "part": "ソプラノ",
+                "level": "歌姫"
+            },
+            "elementary_school": "私立桜女子学園初等部",
+            "know_main_character_identity": false,
+            "request_voice_image": "高めの声で、ほんわかとしたイメージ"
+        },
+        {
+            "name": "松前　汐里",
+            "sex": "女",
+            "birthday": "６月１３日",
+            "relationship_with_main_character": ["後輩"],
+            "attack": true,
+            "club": "家庭科部",
+            "grade_difference": -1,
+            "singing": {
+                "part": "アルト",
+                "level": "歌姫"
+            },
+            "elementary_school": "桜木市立第４小学校",
+            "know_main_character_identity": false,
+            "request_voice_image": "声は高くもなく低くもないが、話し方は妹系"
+        },
+        {
+            "name": "今岡　絵里香",
+            "sex": "女",
+            "birthday": "８月２７日",
+            "attack": true,
+            "club": "社交ダンス部",
+            "grade_difference": 0,
+            "singing": {
+                "part": "アルト",
+                "level": "標準的"
+            },
+            "elementary_school": "私立桜女子学園初等部",
+            "know_main_character_identity": false,
+            "request_voice_image": "お淑やかなお嬢様のようなイメージ。声の高さについては指定なし"
+        },
+        {
+            "name": "神楽坂　茜",
+            "sex": "女",
+            "birthday": "",
+            "relationship_with_main_character": [],
+            "attack": true,
+            "club": "",
+            "committee": "",
+            "grade_difference": 0,
+            "singing": {
+                "part": "アルト",
+                "level": ""
+            },
+            "elementary_school": "",
+            "know_main_character_identity": false,
+            "special_identity": [],
+            "request_voice_image": ""
+        }
+    ]
+}
