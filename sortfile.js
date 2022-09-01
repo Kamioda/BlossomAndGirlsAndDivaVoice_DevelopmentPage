@@ -14,7 +14,7 @@ module.exports = (FileInformation, reservedId) => {
     if (!fs.existsSync(newDir)) fs.mkdir(newDir, () => {});
     fs.rename(
         FileInformation.path,
-        newDir + FileInformation.filename + '.' + FileInformation.originalname.split('.').pop(),
+        newDir + FileInformation.originalname.split('.').pop(),
         () => {}
     );
     return id;
