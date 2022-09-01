@@ -12,10 +12,6 @@ module.exports = (FileInformation, reservedId) => {
     const id = reservedId == null ? uuidv4().split('-').join('').toUpperCase() : reservedId;
     const newDir = './files/' + id + '/';
     if (!fs.existsSync(newDir)) fs.mkdir(newDir, () => {});
-    fs.rename(
-        FileInformation.path,
-        newDir + FileInformation.originalname.split('.').pop(),
-        () => {}
-    );
+    fs.rename(FileInformation.path, newDir + FileInformation.originalname, () => {});
     return id;
 };
