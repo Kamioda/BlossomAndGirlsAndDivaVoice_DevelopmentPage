@@ -62,9 +62,8 @@ const correctPattern = [
         filename: '',
         path: './files/fff',
         size: 0,
-    }
+    },
 ];
-
 
 const errorPattern = [
     {
@@ -126,7 +125,7 @@ const errorPattern = [
         filename: '',
         path: '',
         size: 0,
-    }
+    },
 ];
 
 describe('file inspector', () => {

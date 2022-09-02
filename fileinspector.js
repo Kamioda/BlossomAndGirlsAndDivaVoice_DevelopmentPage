@@ -22,5 +22,5 @@ module.exports = {
      * @param {{ fieldname: string, originalname: string, encoding: string, mimetype: string, destination: string, filename: string, path: string. size: number }[]} FileInformations
      * @returns {boolean}
      */
-    containAnyFilesFailedToSave: FileInformations => FileInformations.some(f => !fs.existsSync(f.path))
+    containAnyFilesFailedToSave: FileInformations => FileInformations.some(f => !fs.existsSync(f.path)),
 };
