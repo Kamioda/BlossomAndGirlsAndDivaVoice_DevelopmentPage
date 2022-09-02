@@ -19,8 +19,8 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/mp4',
         destination: '',
-        filename: './files/bbb',
-        path: '',
+        filename: '',
+        path: './files/bbb',
         size: 0,
     },
     {
@@ -29,8 +29,8 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/mpeg',
         destination: '',
-        filename: './files/ccc',
-        path: '',
+        filename: '',
+        path: './files/ccc',
         size: 0,
     },
     {
@@ -39,8 +39,8 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/ogg',
         destination: '',
-        filename: './files/ddd',
-        path: '',
+        filename: '',
+        path: './files/ddd',
         size: 0,
     },
     {
@@ -49,8 +49,8 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/wav',
         destination: '',
-        filename: './files/eee',
-        path: '',
+        filename: '',
+        path: './files/eee',
         size: 0,
     },
     {
@@ -59,8 +59,8 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/webm',
         destination: '',
-        filename: './files/fff',
-        path: '',
+        filename: '',
+        path: './files/fff',
         size: 0,
     }
 ];
