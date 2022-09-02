@@ -1,5 +1,5 @@
 const fs = require('fs');
-const MimeTypeReg = RegExp('^audio/*[a-zA-Z0-9]{1,}$');
+const MimeTypeReg = new RegExp('^audio/*[a-zA-Z0-9]{1,}$');
 
 module.exports = {
     /**
