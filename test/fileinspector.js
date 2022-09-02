@@ -1,4 +1,5 @@
 const assert = require('assert');
+const fs = require('fs');
 const inspector = require('../fileinspector.js');
 
 const correctPattern = [
@@ -9,7 +10,7 @@ const correctPattern = [
         mimetype: 'audio/aac',
         destination: '',
         filename: '',
-        path: '',
+        path: './files/aaa',
         size: 0,
     },
     {
@@ -18,7 +19,7 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/mp4',
         destination: '',
-        filename: '',
+        filename: './files/bbb',
         path: '',
         size: 0,
     },
@@ -28,7 +29,7 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/mpeg',
         destination: '',
-        filename: '',
+        filename: './files/ccc',
         path: '',
         size: 0,
     },
@@ -38,7 +39,7 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/ogg',
         destination: '',
-        filename: '',
+        filename: './files/ddd',
         path: '',
         size: 0,
     },
@@ -48,7 +49,7 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/wav',
         destination: '',
-        filename: '',
+        filename: './files/eee',
         path: '',
         size: 0,
     },
@@ -58,7 +59,7 @@ const correctPattern = [
         encoding: '',
         mimetype: 'audio/webm',
         destination: '',
-        filename: '',
+        filename: './files/fff',
         path: '',
         size: 0,
     }
@@ -134,5 +135,10 @@ describe('file inspector', () => {
     });
     it('contain other than audio', () => {
         assert.equal(inspector.containOtherThanAudio(errorPattern), true);
+    });
+    it('delete all', () => {
+        correctPattern.forEach(c => fs.writeFileSync(c.path, 'Hello World!'));
+        inspector.deleteAll(correctPattern);
+        assert.equal(correctPattern.some(c => fs.existsSync(c.path)), false);
     });
 });
