@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "桜と乙女と歌姫の声",
   "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=16.17.0"
+  },
   "scripts": {
     "prettier": "prettier --write --end-of-line crlf .",
     "eslint": "eslint --cache --ext .js .",
