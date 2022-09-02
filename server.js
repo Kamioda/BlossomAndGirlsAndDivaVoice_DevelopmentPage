@@ -11,7 +11,7 @@ const app = express();
 app.post('/api/upload', upload.array('files'), (req, res) => {
     let id = null;
     if (req.files == null || req.files.length === 0) return res.sendStatus(400);
-    if (inspector.inspectAll(req.files)) {
+    if (inspector.inspectMimeTypeAll(req.files)) {
         inspector.deleteAll(req.files);
         return res.sendStatus(400);
     }

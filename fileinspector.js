@@ -14,9 +14,9 @@ module.exports = {
         });
     },
     /**
-     * 投稿された全ファイルを検査する
+     * 投稿された全ファイルのMimeTypeを検査する
      * @param {{ fieldname: string, originalname: string, encoding: string, mimetype: string, destination: string, filename: string, path: string. size: number }[]} FileInformations
      * @returns {boolean}
      */
-    inspectAll: FileInformations => FileInformations.some(f => !MimeTypeReg.test(f.mimetype)),
+    inspectMimeTypeAll: FileInformations => FileInformations.some(f => !MimeTypeReg.test(f.mimetype)),
 };
