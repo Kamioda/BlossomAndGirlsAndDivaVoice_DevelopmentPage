@@ -8,7 +8,8 @@
     "eslint": "eslint --cache --ext .js .",
     "eslint:fix": "eslint --cache --ext .js . --fix",
     "coverage": "c8 npm test",
-    "test": "mocha",
+    "ci": "run-p eslint coverage",
+    "test": "mocha ./tests/",
     "start": "node ./server.js"
   },
   "repository": {
