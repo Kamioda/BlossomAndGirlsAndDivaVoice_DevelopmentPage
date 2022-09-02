@@ -143,7 +143,7 @@ describe('file inspector', () => {
             false
         );
     });
-    it('delete all 2', () => {
+    it('delete all 2 / noexcept check', () => {
         correctPattern.forEach(c => fs.writeFileSync(c.path, 'Hello World!'));
         fs.unlinkSync('./files/bbb');
         inspector.deleteAll(correctPattern);
