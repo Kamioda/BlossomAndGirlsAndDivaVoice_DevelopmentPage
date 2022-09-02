@@ -15,6 +15,10 @@ app.post('/api/upload', upload.array('files'), (req, res) => {
         inspector.deleteAll(req.files);
         return res.sendStatus(400);
     }
+    if (!inspector.savedAll(req.files)) {
+        inspector.deleteAll(req.files);
+        return res.sendStatus(500);
+    }
     req.files.forEach(f => (id = sortFile(f, id)));
     console.log(id);
     res.send(id);

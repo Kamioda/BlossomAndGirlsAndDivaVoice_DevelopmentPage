@@ -19,4 +19,10 @@ module.exports = {
      * @returns {boolean}
      */
     inspectMimeTypeAll: FileInformations => FileInformations.some(f => !MimeTypeReg.test(f.mimetype)),
+    /**
+     * 投稿された全ファイルが正常に保存されているかを検査する
+     * @param {{ fieldname: string, originalname: string, encoding: string, mimetype: string, destination: string, filename: string, path: string. size: number }[]} FileInformations
+     * @returns {boolean}
+     */
+    savedAll: FileInformations => FileInformations.some(f => !fs.existsSync(f.path))
 };
