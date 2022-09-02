@@ -14,15 +14,15 @@ module.exports = {
         });
     },
     /**
-     * 投稿された全ファイルのMimeTypeを検査する
+     * 投稿された全ファイルのMimeTypeを検査し、オーディオファイル以外が混ざっているかを検査する
      * @param {{ fieldname: string, originalname: string, encoding: string, mimetype: string, destination: string, filename: string, path: string. size: number }[]} FileInformations
-     * @returns {boolean}
+     * @returns {boolean} 混ざっている場合はtrueを返す
      */
-    inspectMimeTypeAll: FileInformations => FileInformations.some(f => !MimeTypeReg.test(f.mimetype)),
+    containOtherThanAudio: FileInformations => FileInformations.some(f => !MimeTypeReg.test(f.mimetype)),
     /**
      * 投稿された全ファイルが正常に保存されているかを検査する
      * @param {{ fieldname: string, originalname: string, encoding: string, mimetype: string, destination: string, filename: string, path: string. size: number }[]} FileInformations
      * @returns {boolean}
      */
-    savedAll: FileInformations => FileInformations.some(f => !fs.existsSync(f.path))
+    containAnyFilesFailedToSave: FileInformations => FileInformations.some(f => !fs.existsSync(f.path))
 };

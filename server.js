@@ -11,11 +11,11 @@ const app = express();
 app.post('/api/upload', upload.array('files'), (req, res) => {
     let id = null;
     if (req.files == null || req.files.length === 0) return res.sendStatus(400);
-    if (!inspector.inspectMimeTypeAll(req.files)) {
+    if (inspector.containOtherThanAudio(req.files)) {
         inspector.deleteAll(req.files);
         return res.sendStatus(400);
     }
-    if (!inspector.savedAll(req.files)) {
+    if (inspector.containAnyFilesFailedToSave(req.files)) {
         inspector.deleteAll(req.files);
         return res.sendStatus(500);
     }
