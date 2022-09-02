@@ -8,9 +8,7 @@ module.exports = {
      */
     deleteAll: FileInformations => {
         FileInformations.forEach(f => {
-            fs.unlink(f.path, er => {
-                if (er) console.log(er);
-            });
+            if (fs.existsSync(f.path)) fs.unlinkSync(f.path);
         });
     },
     /**
