@@ -136,9 +136,21 @@ describe('file inspector', () => {
     it('contain other than audio', () => {
         assert.equal(inspector.containOtherThanAudio(errorPattern), true);
     });
-    it('delete all', () => {
+    it('delete all 1', () => {
         correctPattern.forEach(c => fs.writeFileSync(c.path, 'Hello World!'));
         inspector.deleteAll(correctPattern);
-        assert.equal(correctPattern.some(c => fs.existsSync(c.path)), false);
+        assert.equal(
+            correctPattern.some(c => fs.existsSync(c.path)),
+            false
+        );
+    });
+    it('delete all 2', () => {
+        correctPattern.forEach(c => fs.writeFileSync(c.path, 'Hello World!'));
+        fs.unlinkSync('./files/bbb');
+        inspector.deleteAll(correctPattern);
+        assert.equal(
+            correctPattern.some(c => fs.existsSync(c.path)),
+            false
+        );
     });
 });
