@@ -15,5 +15,5 @@ app.post('/api/upload', upload.array('files'), (req, res) => {
     res.send(id);
 });
 
-app.use(express.static('./wwwroot'));
+app.use(express.static(path.dirname(__dirname).replace(/\\/g, '/') + '/wwwroot'));
 app.listen(process.env.HTTP_PLATFORM_PORT || config.port);
