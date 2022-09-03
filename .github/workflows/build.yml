@@ -35,8 +35,3 @@ jobs:
           remote_host: meigetsu.jp
           remote_user: Kamioda
           remote_key: ${{ secrets.DEPLOYSSHKEY }}
-      - name: SSH Remote Commands
-        uses: appleboy/ssh-action@v0.1.5
-        
-
-
