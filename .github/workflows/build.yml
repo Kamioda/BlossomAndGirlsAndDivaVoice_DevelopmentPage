@@ -1,0 +1,39 @@
+name: build
+on: [push]
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - run: npm ci
+      - name: Execute test
+        run: npm run ci
+      - name: Publish coverage
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+  deploy:
+    name: Deploy to ConoHa
+    runs-on: ubuntu-20.04
+    needs: test
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@v3
+      - name: create web.config
+        run: sed s/nodepath/${{ secrets.CONOHA_NODE_PATH }} ./web.config && sed s/srcpath/${{ secrets.CONOHA_DEPLOY_PATH }} ./web.config
+      - name: rsync to conoha
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -auz --delete --exclude-from="deploy-exclude-files.txt"
+          path: ./
+          remote_path: ${{ secrets.CONOHA_DEPLOY_PATH }}
+          remote_port: ${{ secrets.CONOHA_SSH_PORT }}
+          remote_host: meigetsu.jp
+          remote_user: Kamioda
+          remote_key: ${{ secrets.DEPLOYSSHKEY }}
