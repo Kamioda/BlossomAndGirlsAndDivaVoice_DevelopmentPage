@@ -129,14 +129,15 @@ const errorPattern = [
 ];
 
 describe('file inspector', () => {
+    before(() => {
+        if (!fs.existsSync('./files/')) fs.mkdirSync('./files/');
+        correctPattern.forEach(c => fs.writeFileSync(c.path, 'Hello World!'));
+    });
     it('all audio file', () => {
         assert.equal(inspector.containOtherThanAudio(correctPattern), false);
     });
     it('contain other than audio', () => {
         assert.equal(inspector.containOtherThanAudio(errorPattern), true);
-    });
-    before(() => {
-        correctPattern.forEach(c => fs.writeFileSync(c.path, 'Hello World!'));
     });
     it('delete all 1', () => {
         inspector.deleteAll(correctPattern);
@@ -148,7 +149,7 @@ describe('file inspector', () => {
     before(() => {
         correctPattern.forEach(c => fs.writeFileSync(c.path, 'Hello World!'));
         fs.unlinkSync('./files/bbb');
-    })
+    });
     it('delete all 2 / noexcept check', () => {
         inspector.deleteAll(correctPattern);
         assert.equal(
