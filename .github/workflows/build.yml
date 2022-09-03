@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: create web.config
-        run: sed s/nodepath/${{ secrets.CONOHA_NODE_PATH }} ./web.config && sed s/srcpath/${{ secrets.CONOHA_DEPLOY_PATH }} ./web.config
+        run: sed s/nodepath/${secrets.CONOHA_NODE_PATH} ./web.config && sed s/srcpath/${secrets.CONOHA_DEPLOY_PATH} ./web.config
       - name: rsync to conoha
         uses: burnett01/rsync-deployments@5.2
         with:
