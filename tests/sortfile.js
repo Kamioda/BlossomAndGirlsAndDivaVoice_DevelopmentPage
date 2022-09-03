@@ -5,7 +5,8 @@ const fs = require('fs');
 describe('sortFile', () => {
     before(() => {
         if (!fs.existsSync('./files/')) fs.mkdirSync('./files/');
-        if (!fs.existsSync('./files/BA9189358FEE4EDA86457051E1EA455C/')) fs.mkdirSync('./files/BA9189358FEE4EDA86457051E1EA455C/');
+        if (!fs.existsSync('./files/BA9189358FEE4EDA86457051E1EA455C/'))
+            fs.mkdirSync('./files/BA9189358FEE4EDA86457051E1EA455C/');
         if (!fs.existsSync('./files/testfile01')) fs.writeFileSync('./files/testfile01', 'HelloWorld');
         if (!fs.existsSync('./files/testfile02')) fs.writeFileSync('./files/testfile02', 'HelloWorld');
     });
