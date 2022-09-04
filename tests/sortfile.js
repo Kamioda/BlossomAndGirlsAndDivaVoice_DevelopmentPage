@@ -75,6 +75,7 @@ describe('sortFile', () => {
     });
 
     after(() => {
-        if (fs.existsSync('./files/testfile')) fs.unlinkSync('./files/testfile', 'HelloWorld');
+        if (!fs.existsSync('./files/testfile01')) fs.writeFileSync('./files/testfile01', 'HelloWorld');
+        if (!fs.existsSync('./files/testfile02')) fs.writeFileSync('./files/testfile02', 'HelloWorld');
     });
 });
