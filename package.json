@@ -13,7 +13,7 @@
     "eslint:fix": "eslint --cache --ext .js . --fix",
     "coverage": "c8 npm test",
     "ci": "run-p eslint coverage",
-    "test": "mocha ./tests/",
+    "test": "mocha --recursive ./tests/",
     "start": "node ./server.js"
   },
   "repository": {
