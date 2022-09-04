@@ -1,6 +1,6 @@
+const inspector = require('../fileinspector.js');
 const assert = require('assert');
 const fs = require('fs');
-const inspector = require('../fileinspector.js');
 
 const correctPattern = [
     {
