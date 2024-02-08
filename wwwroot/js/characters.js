@@ -96,7 +96,7 @@ const CharacterInfoGenerator = {
     },
     contents: [],
     oninit: () => {
-        return fetch('../characterprofile.json')
+        return fetch('./characterprofile.json')
             .then(r => r.json())
             .then(j => {
                 CharacterInfoGenerator.contents = j.characters.map(c =>

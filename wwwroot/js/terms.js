@@ -12,7 +12,7 @@ const TermsGenerator = {
     },
     contents: [],
     oninit: () => {
-        return fetch('../terms.json')
+        return fetch('./terms.json')
             .then(r => r.json())
             .then(j => {
                 TermsGenerator.contents = j.terms.map(c => TermsGenerator.CreateTermMessage(c));
